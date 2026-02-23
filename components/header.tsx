@@ -8,7 +8,7 @@ import { SiteLogo } from "@/components/site-logo";
 export async function Header() {
   const [session, settings] = await Promise.all([getServerSession(authOptions), getSiteSettings()]);
   const siteName = settings.siteName || "Mod Marketplace";
-  const siteLogo = settings.siteLogo && settings.siteLogo.startsWith("/") ? settings.siteLogo : null;
+  const siteLogo = settings.siteLogo && settings.siteLogo.trim() !== "" ? settings.siteLogo.trim() : null;
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur">
       <div className="flex h-16 w-full items-center justify-between px-4 sm:px-6 lg:px-8">

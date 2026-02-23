@@ -21,8 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const settings = await getSiteSettings();
     const faviconUrl =
-      settings.faviconUrl && typeof settings.faviconUrl === "string" && settings.faviconUrl.startsWith("/")
-        ? settings.faviconUrl
+      settings.faviconUrl && typeof settings.faviconUrl === "string" && settings.faviconUrl.trim() !== ""
+        ? settings.faviconUrl.trim()
         : null;
     return {
       title: settings.siteName,
