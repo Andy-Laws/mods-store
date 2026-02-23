@@ -1,0 +1,47 @@
+{
+  "name": "website-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "prisma generate",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "setup:uploads": "node scripts/setup-uploads.js",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.995.0",
+    "@aws-sdk/s3-request-presigner": "^3.995.0",
+    "@prisma/adapter-mariadb": "^7.4.1",
+    "@prisma/client": "^7.4.1",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "mariadb": "^3.5.1",
+    "next": "16.1.6",
+    "next-auth": "^4.24.13",
+    "prisma": "^7.4.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^17.3.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}
